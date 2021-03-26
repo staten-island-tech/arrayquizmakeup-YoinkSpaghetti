@@ -76,7 +76,7 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
-
+console.log(books.name);
 //Sort books from oldest to most recent
 
 //sort books alphabetically
