@@ -76,14 +76,61 @@ const titles = [
 
 //Array of authors and the book they wrote
 //"--- wrote --- in ---"
-const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(books[numbers]);
+for (let x = 0; x < 10; x++) {
+  console.log(
+    books[x].authorFirst +
+      " wrote " +
+      books[x].name +
+      " in " +
+      books[x].publishDate
+  );
+}
 //Sort books from oldest to most recent
+bookAge = [
+  books[0].publishDate,
+  books[1].publishDate,
+  books[2].publishDate,
+  books[3].publishDate,
+  books[4].publishDate,
+  books[5].publishDate,
+  books[6].publishDate,
+  books[7].publishDate,
+  books[8].publishDate,
+  books[9].publishDate,
+];
 
+function bookAgeSort(name) {
+  x = 0;
+  while (x < name.length) {
+    y = 1;
+    if (name[x] > name[y]) {
+      thing1 = name[y];
+      name.splice(y, 1);
+      thing1.push;
+    }
+    y = y + 1;
+    if (y >= name.length) {
+      x = x + 1;
+      y = x + 1;
+    }
+    if (x >= name.length) {
+      console.log(name);
+    }
+  }
+}
+bookAgeSort(bookAge);
 //sort books alphabetically
 
 //Find who wrote War and Peace
-
+z = 0;
+while (z < books.length) {
+  if (books[z].name == "War and Peace") {
+    console.log(books[z].authorFirst + " wrote " + books[z].name);
+    z = books.length + 1;
+  } else {
+    z = z + 1;
+  }
+}
 //how many books were written before 1900?
 
 //was there at least one book published within the last 100 years?
