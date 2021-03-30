@@ -86,7 +86,7 @@ for (let x = 0; x < 10; x++) {
   );
 }
 //Sort books from oldest to most recent
-bookAge = [
+/* bookAge = [
   books[0].publishDate,
   books[1].publishDate,
   books[2].publishDate,
@@ -97,12 +97,11 @@ bookAge = [
   books[7].publishDate,
   books[8].publishDate,
   books[9].publishDate,
-];
-
-function bookAgeSort(name) {
+]; */
+/* function bookAgeSort(name) {
   x = 0;
+  y = 1;
   while (x < name.length) {
-    y = 1;
     if (name[x] > name[y]) {
       thing1 = name[y];
       name.splice(y, 1);
@@ -118,9 +117,16 @@ function bookAgeSort(name) {
     }
   }
 }
-bookAgeSort(bookAge);
-//sort books alphabetically
+bookAgeSort(bookAge); */
 
+bookAge.sort(function (a, b) {
+  return a - b;
+});
+
+console.log(bookAge);
+//sort books alphabetically
+titles.sort();
+console.log(titles);
 //Find who wrote War and Peace
 z = 0;
 while (z < books.length) {
@@ -131,8 +137,41 @@ while (z < books.length) {
     z = z + 1;
   }
 }
+
 //how many books were written before 1900?
-
+a = 0;
+while (a < books.length) {
+  if (books[a].publishDate < 1900) {
+    console.log(books[a].name + " was before 1900");
+    a = a + 1;
+  } else {
+    a = a + 1;
+  }
+}
 //was there at least one book published within the last 100 years?
-
+b = 0;
+while (b < books.length) {
+  if (books[b].publishDate >= 1921) {
+    console.log(books[b].name + " was within the last 100 years");
+    b = b + 1;
+  } else {
+    b = b + 1;
+  }
+}
 //was every book published within the last 100 years?
+c = 0;
+d = 0;
+while (c < books.length) {
+  if (books[c].publishDate <= 1921) {
+    console.log(books[c].name + " was not within the last 100 years");
+    c = c + 1;
+    d = d + 1;
+  } else {
+    c = c + 1;
+  }
+}
+if (d >= books.length) {
+  console.log("all books were from the last 100 years");
+} else {
+  console.log("not all books were from the last 100 years");
+}
